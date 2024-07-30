@@ -14,7 +14,7 @@ public struct ToolbeltReader<Content: View>: View {
         content(toolbelt)
     }
 
-    public static func enabled(content: @escaping () -> Content) -> ToolbeltReader<Content?> {
+    public static func enabled(@ViewBuilder content: @escaping () -> Content) -> ToolbeltReader<Content?> {
         .init { enabled in
             if enabled {
                 content()
